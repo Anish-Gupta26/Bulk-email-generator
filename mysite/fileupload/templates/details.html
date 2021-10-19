@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email & Password</title>
+</head>
+<body>
+    <form method="POST" action="output" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Enter Details</h1>
+        <br>
+        <label>Enter sender's email</label>
+        <input type="email" name="e-mail">
+        <br><br>
+        <label>Enter Password</label>
+        <input type="password" name="password">
+        <br><br><br>
+        <label>Enter Subject of mail</label>
+        <input type="text" name="subject">
+        <br><br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
