@@ -16,11 +16,19 @@
         <br><br>
         <label>Enter Password</label>
         <input type="password" name="password">
-        <br><br><br>
+        <br><br>
+        <label>Enter Subject of mail</label>
+        <select name="email_col">
+             {% for i in col_head %}
+             <option>{{i}}</option>
+             {% endfor %}
+        </select>
+        <br><br>
         <label>Enter Subject of mail</label>
         <input type="text" name="subject">
         <br><br><br>
-        <input type="submit">
+
+        <input type="submit" value="SEND MAIL">
     </form>
 </body>
 </html>

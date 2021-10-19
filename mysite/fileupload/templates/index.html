@@ -4,29 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Placeholder Match</title>
 </head>
 <body>
     <form method="POST" action="match" enctype="multipart/form-data">
             {% csrf_token %}
         {% if something %}
-        <h1>Select the Placeholder!</h1>
+        <h1>Match the Placeholder!</h1>
         {% for size in range%}
                 <select name="{{size}}" id="text-file">
                 {% for i in text_Pholder%}
                     <option value="{{i}}">{{i}}</option>
                 {% endfor %}
                 </select> 
-
+                 =>
                 <select name="{{count| add:size}}" id="excel-file">
                 {% for j in excel_Pholder%}
                     <option value="{{j}}">{{j}}</option>
                 {% endfor %}
                 </select>
-                <br>
+                <br><br>
         {% endfor %}
-        <input type="submit">
+        <input type="submit" value="Next &rarr;">
         {% else %}
+            <h1>Bulk Email generator</h1>
             <a href='/upload'>Upload File</a>
         {% endif %}
     </form>
