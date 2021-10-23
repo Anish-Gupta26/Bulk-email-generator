@@ -7,44 +7,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
-    <title>Home page</title>
+    <link rel="stylesheet" href="media/style/style.css">
+    <title>Email Generator</title>
 </head>
 <body>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Email Generator</a>
+                    <a class="navbar-brand" href="/">Email Generator</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="/about">About</a>
                         </li>
                     </ul>
                     </div>
                 </div>
-                </nav>
+            </nav>
         
-
                 <div class="container">
-                {% comment %} <div class="card mb-3" style="max-width: 540px; margin:20px">
-                        <div class="row g-0 my-3">
-                            <div class="col-md-4">
-                            <img src="media/logo.PNG" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Email generator</h5>
-                                <p class="card-text"><a href="/upload" class="btn btn-danger">Upload Files&rarr;</a></p>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        -------------------------------------------------------------------- {% endcomment %}
                     <div class="card text-center my-3 w-30" style="width:50%;margin: auto;">
                         <h5 class="card-header">Email generator</h5>
                         <div class="card-body">
@@ -72,21 +58,11 @@
                 </ol>
               
                 <p><b>Please Note:- The password entered and the files you upload are secure.</b></p>
-                <p>Sample.txt file&rarr;</p>
-                <img src="media/sample.PNG" alt="sample.txt file">
+         
+                <p>Reach us at <img class="material-icons" src="media/images/gmail.svg"> <a href="mailto:ec.project@nirmauni.ac.in"> ec.project@nirmauni.ac.in</a></p>
                 <br><br>
             </div>
-            <style>
-                .footer {
-                  /* position: fixed; */
-                  left: 0;
-                  bottom: 0;
-                  width: 100%;
-                  background-color: black;
-                  color: white;
-                  /* text-align: center; */
-                }
-                </style>
+        </form>
                 <div class="footer container-fluid">
                     <div class="row justify-content-md-center pt-2">
                       <div class="col col-lg-2">
@@ -104,7 +80,7 @@
                     </div>
                     <div class="text-center my-2"> Copyright © 2021 Email Generator</div>
                 </div>
-    </form>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -80,8 +80,11 @@ def home(request):
         text_Pholder.clear()
         text_Pholder = list(text_Pholder_set)
         size_Pholder = len(text_Pholder_set)               #Total placeholders
-        return render(request,'index.html',{'something':True,'text_Pholder':text_Pholder,'excel_Pholder':col_head,'range':range(size_Pholder), 'count':1000})
+        return render(request,'index.html',{'something':True,'text_Pholder':text_Pholder,'excel_Pholder':col_head,'range':range(size_Pholder), 'count':1000,'c':0})
     return render(request,'home.html')
+
+def about(request):
+    return render(request,"about.html")
 
 def upload(request):
     return render(request,"fileupload.html")

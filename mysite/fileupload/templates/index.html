@@ -22,10 +22,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="/about">About</a>
                     </li>
                 </ul>
                 </div>
@@ -45,14 +45,15 @@
         </ul>
         <br>
         <p class="fw-bold">&nbspText File &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Excel File</p>
+        
         {% for size in range%}
-                 <select name="{{size}}" id="text-file">
+                
+                <select name="{{size}}" id="text-file">
                 {% for i in text_Pholder%}
                     <option value="{{i}}">{{i}}</option>
                 {% endfor %}
                 </select>  
-                {% comment %} <p name={{size}}>{{ text_Pholder| index:size }}</p>
-                {{ text_Pholder.(size) }} &rarr; {% endcomment %}
+                  &rarr;
                 <select name="{{count| add:size}}" id="excel-file">
                 {% for j in excel_Pholder%}
                     <option value="{{j}}">{{j}}</option>

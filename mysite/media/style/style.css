@@ -1,0 +1,16 @@
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+.img-thumbnail {
+              padding: 0.25rem;
+              background-color: #fff;
+              border: 1px solid #dee2e6;
+              border-radius: 0.25rem;
+              max-width: 34%;
+              height: auto;
+}
