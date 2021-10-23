@@ -22,7 +22,7 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('fileupload.urls')).
+    path('',include('fileupload.urls')),
 
     #For Heroku deployment
     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 

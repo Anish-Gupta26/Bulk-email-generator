@@ -5,7 +5,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('',home),
-    path('upload/',upload),
+    path('upload',upload),
     path('match',matching),
     path('output',send_mail)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

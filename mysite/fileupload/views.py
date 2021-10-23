@@ -40,7 +40,7 @@ def matching(request):
         global dict,txt_data,output
         for i in range(size_Pholder):
             p = str(i)
-            s = str(100+i)
+            s = str(1000+i)
             x = request.POST.get(p)       #Extracting Placeholders using name attribute of HTML
             y = request.POST.get(s)
             dict[x] = y                   #Mapping of placeholders
@@ -76,9 +76,12 @@ def home(request):
             txt_data+=x.decode()
         
         text_Pholder = re.findall('\%.*?\%', txt_data) #Placeholders of .txt file using regex
-        size_Pholder = len(text_Pholder)               #Total placeholders
-        return render(request,'index.html',{'something':True,'text_Pholder':text_Pholder,'excel_Pholder':col_head,'range':range(size_Pholder), 'count':100})
-    return render(request,'index.html')
+        text_Pholder_set = set(text_Pholder)                   #For unique placeholders
+        text_Pholder.clear()
+        text_Pholder = list(text_Pholder_set)
+        size_Pholder = len(text_Pholder_set)               #Total placeholders
+        return render(request,'index.html',{'something':True,'text_Pholder':text_Pholder,'excel_Pholder':col_head,'range':range(size_Pholder), 'count':1000})
+    return render(request,'home.html')
 
 def upload(request):
     return render(request,"fileupload.html")
