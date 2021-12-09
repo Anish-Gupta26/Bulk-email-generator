@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/images/favicon-16x16.png">
     <title>Placeholder Match</title>
 </head>
 <body>
@@ -45,14 +45,14 @@
         </ul>
         <br>
         <p class="fw-bold">&nbspText File &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Excel File</p>
-        
+
         {% for size in range%}
-                
+
                 <select name="{{size}}" id="text-file">
                 {% for i in text_Pholder%}
                     <option value="{{i}}">{{i}}</option>
                 {% endfor %}
-                </select>  
+                </select>
                   &rarr;
                 <select name="{{count| add:size}}" id="excel-file">
                 {% for j in excel_Pholder%}
@@ -64,7 +64,7 @@
         <small class="text-muted muted">*Text file placeholders should be unique</small><br>
         <input type="submit" class="btn btn-danger" value="Next &rarr;">
     </div>
-        
+
         {% endif %}
     </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

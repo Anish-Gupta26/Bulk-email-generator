@@ -21,7 +21,7 @@ from django.views.static import serve
 from django.conf.urls import url
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('',include('fileupload.urls')),
 
     #For Heroku deployment

@@ -13,7 +13,7 @@ output=[]       #List of Final output strings with data from excel
 txt_data=""     #String with data of .txt file
 df=""           #Data Frame object of pandas
 
-def send_mail(request):     #Function to send mail 
+def send_mail(request):     #Function to send mail
     if request.method == "POST":
         s_email = request.POST.get("e-mail")  #Extracting data from excel file
         s_passwsord = request.POST.get('password')
@@ -28,23 +28,25 @@ def send_mail(request):     #Function to send mail
             message = 'Subject: {}\n\n{}'.format(subject, output[i])
             context = ssl.create_default_context()
             with smtplib.SMTP(smtp_server, port) as server:
-                server.ehlo()  
+                server.ehlo()
                 server.starttls(context=context)
-                server.ehlo() 
+                server.ehlo()
                 server.login(sender_email, password)
                 server.sendmail(sender_email, receiver_email, message)
-    return render(request,'output.html')    
+    dict.clear()
+    return render(request,'output.html')
 
 def matching(request):
     if request.method == "POST":
         global dict,txt_data,output
+        dict.clear()
         for i in range(size_Pholder):
             p = str(i)
             s = str(1000+i)
             x = request.POST.get(p)       #Extracting Placeholders using name attribute of HTML
             y = request.POST.get(s)
             dict[x] = y                   #Mapping of placeholders
-        
+
         output=[]
         for i in range(len(df)):          #Making string list using row data of data frames
             temp=txt_data
@@ -62,19 +64,19 @@ def home(request):
         valid_excel = (".xls",".xlsx",".xlsm" ,".xlsb",".odf" ,".ods","odt")
         if text_file.name.endswith('.txt')==False or excel_file.name.endswith(valid_excel)==False:
              return HttpResponse("Oops! Please provide right file format")
-        
+
         global df, txt_data,size_Pholder,col_head
         df=""
         txt_data=""
-        csv = pd.read_excel(excel_file) 
+        csv = pd.read_excel(excel_file)
         df = pd.DataFrame(csv)
         col_head = []                    #Headers of excel file
         for col in csv.columns:
             col_head.append(col)
-        
+
         for x in text_file:             #text file data
             txt_data+=x.decode()
-        
+
         text_Pholder = re.findall('\%.*?\%', txt_data) #Placeholders of .txt file using regex
         text_Pholder_set = set(text_Pholder)                   #For unique placeholders
         text_Pholder.clear()
